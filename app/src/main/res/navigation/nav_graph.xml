@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/networkFragment"
+        android:name="com.terasoltechnologies.mvvm_test.networkdfragment.HomeFragment"
+        android:label="fragment_network"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.terasoltechnologies.mvvm_test.mainscreen.MainFragment"
+        android:label="MainFragment" >
+        <action
+            android:id="@+id/action_mainFragment_to_homeFragment"
+            app:destination="@id/networkFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_roomFragment"
+            app:destination="@id/roomFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_pagingMainFragment"
+            app:destination="@id/pagingMainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/roomFragment"
+        android:name="com.terasoltechnologies.mvvm_test.roomfragment.RoomFragment"
+        android:label="fragment_room"
+        tools:layout="@layout/fragment_room" >
+        <action
+            android:id="@+id/action_roomFragment_to_addDataFragment"
+            app:destination="@id/addDataFragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/addDataFragment"
+        android:name="com.terasoltechnologies.mvvm_test.roomfragment.AddDataFragment"
+        android:label="fragment_add_data"
+        tools:layout="@layout/fragment_add_data" />
+    <fragment
+        android:id="@+id/pagingMainFragment"
+        android:name="com.terasoltechnologies.mvvm_test.paging.ui.PagingMainFragment"
+        android:label="fragment_paging_main2"
+        tools:layout="@layout/fragment_paging_main2" />
+</navigation>
